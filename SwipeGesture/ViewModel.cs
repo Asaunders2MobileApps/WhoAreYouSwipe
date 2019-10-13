@@ -11,7 +11,8 @@ namespace SwipeGesture
         String[] Questions = new string[] { "Who is this tool used by?", "Ezio is: ", "Leonardo is: ", "Viere is: ", "Desonmond is: ", "This knight is: ", "What does this logo represent?" };
         String[] GoodAnswers = new string[] {"Members of the Brotherhood", "The leader of the Brotherhood", "A great inventor and partner", "Our main target", "My ancestor", "A puppet", "The Brotherhood" };
         String[] EvilAnswers = new string[] { "A group of Rebels", "The leader of the Rebels", "A traiter that must be eliminated", "Our leader", "A threat to the Templars", "A protector", "The Rebels" };
-        int[] score = {0, 0, 0, 0, 0, 0, 0 };
+        int[] score = {0, 0 };
+        int i = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,12 +20,11 @@ namespace SwipeGesture
         {
             set
             {
-                //OnPropertyChanged("Question");
+                OnPropertyChanged("Question");
             }
             get
             {
-                //return Questions[i];
-                return Questions.ToString();
+                return Questions[i];
             }
         }
 
@@ -32,13 +32,12 @@ namespace SwipeGesture
         {
             set
             {
-                //OnPropertyChanged("GoodAnswers");
-                //score[1] += 1;
+                OnPropertyChanged("GoodAnswers");
+                score[1] += 1;
             }
             get
             {
-                //return GoodAnswers[i];
-                return GoodAnswers.ToString();
+                return GoodAnswers[i];
             }
         }
 
@@ -46,13 +45,12 @@ namespace SwipeGesture
         {
             set
             {
-                //OnPropertyChanged("EvilAnswers");
-                //score[0] += 1;
+                OnPropertyChanged("EvilAnswers");
+                score[0] += 1;
             }
             get
             {
-                //return EvilAnswers[i];
-                return EvilAnswers.ToString();
+                return EvilAnswers[i];
             }
         }
 
@@ -61,6 +59,11 @@ namespace SwipeGesture
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public string ImagePath
+        {
+            get { return string.Format("image" + i + ".png"); }
         }
     }
 }

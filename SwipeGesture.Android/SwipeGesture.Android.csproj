@@ -93,25 +93,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ezio.png" />
+    <AndroidResource Include="Resources\drawable\image6.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\creedlogo.png" />
+    <AndroidResource Include="Resources\drawable\image1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\hiddenblade.png" />
+    <AndroidResource Include="Resources\drawable\image2.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\leonardo.png" />
+    <AndroidResource Include="Resources\drawable\image3.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\templar.png" />
+    <AndroidResource Include="Resources\drawable\image4.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\viere.png" />
+    <AndroidResource Include="Resources\drawable\image5.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\desmond.png" />
+    <AndroidResource Include="Resources\drawable\image0.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

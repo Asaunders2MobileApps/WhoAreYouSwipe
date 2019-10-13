@@ -14,6 +14,19 @@
                     <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeCommand}" CommandParameter="Right" />
                 </BoxView.GestureRecognizers>
             </BoxView>
+        
+        <Label x:Name="myLabel" 
+               Text="{Binding Question}" 
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Label x:Name="goodButton"
+                Text="{Binding Good}"
+                />
+
+        <Label x:Name="evilButton"
+                Text="{Binding Evil}"
+               />
         -->
 
         <Image Source="{Binding ImagePath}">

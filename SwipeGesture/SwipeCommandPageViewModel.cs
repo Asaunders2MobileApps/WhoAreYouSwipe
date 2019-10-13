@@ -11,7 +11,7 @@ namespace SwipeGesture
         String[] Questions = new string[] { "Who is this tool used by?", "Ezio is: ", "Leonardo is: ", "Viere is: ", "Desonmond is: ", "This knight is: ", "What does this logo represent?" };
         String[] GoodAnswers = new string[] {"Members of the Brotherhood", "The leader of the Brotherhood", "A great inventor and partner", "Our main target", "My ancestor", "A puppet", "The Brotherhood" };
         String[] EvilAnswers = new string[] { "A group of Rebels", "The leader of the Rebels", "A traiter that must be eliminated", "Our leader", "A threat to the Templars", "A protector", "The Rebels" };
-        int[] score = {0, 0 };
+        int[] score = {0, 0};
         int i = 0;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -77,9 +77,27 @@ namespace SwipeGesture
 
         void Swipe(string value)
         {
-            SwipeDirection = $"You swiped: {value}";
-            OnPropertyChanged("SwipeDirection");
+            if (i < 6)
+            {
+                i++;
+                if (value.Equals("Left"))
+                {
+                    SwipeDirection = $"You swiped: left..... i = " + i;
+                    OnPropertyChanged("SwipeDirection");
+                }
+                else if (value.Equals("Right"))
+                {
+                    SwipeDirection = $"You swiped: right..... i = " + i;
+                    OnPropertyChanged("SwipeDirection");
+                }
+            }
+            //generate result
+            //else
+            //{
+
+            //}
         }
+
 
         //#region INotifyPropertyChanged
 

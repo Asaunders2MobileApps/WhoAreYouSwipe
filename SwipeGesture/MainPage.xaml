@@ -3,17 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SwipeGesture" 
              x:Class="SwipeGesture.MainPage"
-             Title="Swipe Gesture Recognizers">
+             Title="Swipe Left for the first option and Right for the second.">
     <StackLayout Margin="20">
-        
-            <Label Text="Swipe inside the box with a single finger." />
-           
+
         <!--<BoxView Color="Teal" WidthRequest="300" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
             <BoxView.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}" CommandParameter="Left" />
                     <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeCommand}" CommandParameter="Right" />
                 </BoxView.GestureRecognizers>
             </BoxView>-->
+        <Label Text="{Binding Character}" />
         
         <Label x:Name="question"
                Text="{Binding Question}" 
@@ -37,6 +36,6 @@
             </Image.GestureRecognizers>
         </Image>
 
-        <Label Text="{Binding SwipeDirection}" />
+        
     </StackLayout>
 </ContentPage>

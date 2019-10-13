@@ -17,17 +17,20 @@
         <Label x:Name="question"
                Text="{Binding Question}" 
                HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
+               VerticalOptions="CenterAndExpand" 
+               IsVisible="{Binding Visible}"/>
 
         <Label x:Name="goodChoice"
                 Text="{Binding Good}"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="CenterAndExpand"
+               IsVisible="{Binding Visible}"/>
 
         <Label x:Name="evilChoice"
                 Text="{Binding Evil}"
                 HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand" />
+                VerticalOptions="CenterAndExpand"
+               IsVisible="{Binding Visible}"/>
 
         <Image Source="{Binding ImagePath}">
             <Image.GestureRecognizers>

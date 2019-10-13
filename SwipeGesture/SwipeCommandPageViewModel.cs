@@ -13,9 +13,23 @@ namespace SwipeGesture
         String[] EvilAnswers = new string[] { "A group of Rebels", "The leader of the Rebels", "A traiter that must be eliminated", "Our leader", "A threat to the Templars", "A protector", "The Rebels" };
         int[] score = {0, 0};
         int i = 0;
+        int x = 0;
         private string character = "";
+        Boolean isVisible = true;
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public bool Visible
+        {
+            protected set
+            {
+                OnPropertyChanged("Visible");
+            }
+            get
+            {
+                return isVisible;
+            }
+        }
 
         public string Question
         {
@@ -64,7 +78,16 @@ namespace SwipeGesture
 
         public string ImagePath
         {
-            get { return string.Format("image" + i + ".png"); }
+            get {
+                if (i <= 6)
+                {
+                    return string.Format("image" + i + ".png");
+                }
+                else
+                {
+                    return string.Format("image" + x + ".png");
+                }
+            }
         }
 
         public ICommand SwipeCommand => new Command<string>(Swipe);
@@ -72,16 +95,18 @@ namespace SwipeGesture
 
         public string Character {
             get { return character; }
-            private set {
+            set {
                 if (score[0] > score[1])
                 {
                     if (score[0] < 3)
                     {
                         character = "Ezio the main assassin and ancestor to desmond. You lead a large group of assassins in your conquest to bring justice to Italy and restore the Assassin's Order. You biggest nemisis is Vivere de Pazzi";
+                        x = 1;
                     }
                     else
                     {
                         character = "Desmond you are hunted by the templar order and visit your ancestors memories in order to learn how to save the world from being destroyed.";
+                        x = 4;
                     }
                 }
                 else
@@ -89,10 +114,12 @@ namespace SwipeGesture
                     if (score[1] < 3)
                     {
                         character = "Leonardo Da Vinci, you are a gifted inventor and helped Ezio create many of the tools he used to restore order.";
+                        x = 2;
                     }
                     else
                     {
                         character = "Viere de Pazzi, you want to destroy the Assassin's Order and control the people of Italy.";
+                        x = 3;
                     }
                 }
             }
@@ -128,6 +155,10 @@ namespace SwipeGesture
             }
             else
             {
+                isVisible = false;
+                OnPropertyChanged("Visible");
+                Character = character;
+                OnPropertyChanged("ImagePath");
                 OnPropertyChanged("Character");
             }
         }

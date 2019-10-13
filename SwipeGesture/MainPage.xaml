@@ -3,42 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:SwipeGesture" 
              x:Class="SwipeGesture.MainPage"
-             Title="Swipe Left for the first option and Right for the second.">
-    <StackLayout Margin="20">
+             Title="Who Are You?">
 
-        <!--<BoxView Color="Teal" WidthRequest="300" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-            <BoxView.GestureRecognizers>
-                <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}" CommandParameter="Left" />
-                    <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeCommand}" CommandParameter="Right" />
-                </BoxView.GestureRecognizers>
-            </BoxView>-->
-        <Label Text="{Binding Character}" />
-        
+    <StackLayout Margin="20"
+               BackgroundColor="{x:Static local:Constants.BackgroundColor4}">
+
+        <Label Text="Swipe left for the first choice and right for the second choice"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TextColor="{x:Static local:Constants.Fontcolor}"
+               BackgroundColor="{x:Static local:Constants.BackgroundColor}"
+               Font="{x:Static local:Constants.TitleFont}"
+               IsVisible="{Binding Visible}"/>
+
         <Label x:Name="question"
                Text="{Binding Question}" 
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" 
+               TextColor="{x:Static local:Constants.Fontcolor}"
+               BackgroundColor="{x:Static local:Constants.BackgroundColor}"
+               Font="{x:Static local:Constants.Font}"
                IsVisible="{Binding Visible}"/>
 
-        <Label x:Name="goodChoice"
-                Text="{Binding Good}"
-                HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
-               IsVisible="{Binding Visible}"/>
-
-        <Label x:Name="evilChoice"
-                Text="{Binding Evil}"
-                HorizontalOptions="Center"
-                VerticalOptions="CenterAndExpand"
-               IsVisible="{Binding Visible}"/>
-
-        <Image Source="{Binding ImagePath}">
+        <Image Source="{Binding ImagePath}" BackgroundColor="{x:Static local:Constants.BackgroundColor}">
             <Image.GestureRecognizers>
                 <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}" CommandParameter="Left" />
                 <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeCommand}" CommandParameter="Right" />
             </Image.GestureRecognizers>
         </Image>
 
+        <Label x:Name="goodChoice"
+                Text="{Binding Good}"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Font="{x:Static local:Constants.Font}"
+                TextColor="{x:Static local:Constants.Fontcolor}"
+                BackgroundColor="{x:Static local:Constants.BackgroundColor3}"
+                IsVisible="{Binding Visible}"/>
+
+        <Label x:Name="evilChoice"
+                Text="{Binding Evil}"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Font="{x:Static local:Constants.Font}"
+                TextColor="{x:Static local:Constants.Fontcolor}"
+                BackgroundColor="{x:Static local:Constants.BackgroundColor2}"
+                IsVisible="{Binding Visible}"/>
         
+        <Label Text="{Binding Character}" 
+               HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Font="{x:Static local:Constants.Font}"
+                TextColor="{x:Static local:Constants.Fontcolor}"
+                BackgroundColor="{x:Static local:Constants.BackgroundColor}"/>
+
     </StackLayout>
 </ContentPage>

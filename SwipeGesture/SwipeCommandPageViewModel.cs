@@ -100,12 +100,12 @@ namespace SwipeGesture
                 {
                     if (score[0] < 3)
                     {
-                        character = "Ezio the main assassin and ancestor to desmond. You lead a large group of assassins in your conquest to bring justice to Italy and restore the Assassin's Order. You biggest nemisis is Vivere de Pazzi";
+                        character = "You are Ezio the main assassin and ancestor to desmond. You lead a large group of assassins in your conquest to bring justice to Italy and restore the Assassin's Order. You biggest nemisis is Vivere de Pazzi";
                         x = 1;
                     }
                     else
                     {
-                        character = "Desmond you are hunted by the templar order and visit your ancestors memories in order to learn how to save the world from being destroyed.";
+                        character = "You are Desmond you are hunted by the templar order and visit your ancestors memories in order to learn how to save the world from being destroyed.";
                         x = 4;
                     }
                 }
@@ -113,12 +113,12 @@ namespace SwipeGesture
                 {
                     if (score[1] < 3)
                     {
-                        character = "Leonardo Da Vinci, you are a gifted inventor and helped Ezio create many of the tools he used to restore order.";
+                        character = "You are Leonardo Da Vinci, you are a gifted inventor and helped Ezio create many of the tools he used to restore order.";
                         x = 2;
                     }
                     else
                     {
-                        character = "Viere de Pazzi, you want to destroy the Assassin's Order and control the people of Italy.";
+                        character = "You are Viere de Pazzi, you want to destroy the Assassin's Order and control the people of Italy.";
                         x = 3;
                     }
                 }

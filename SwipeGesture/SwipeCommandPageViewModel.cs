@@ -77,9 +77,9 @@ namespace SwipeGesture
 
         void Swipe(string value)
         {
-            if (i < 6)
+            i += 1;
+            if (i =< 6)
             {
-                i++;
                 if (value.Equals("Left"))
                 {
                     SwipeDirection = $"You swiped: left..... i = " + i;
@@ -90,6 +90,10 @@ namespace SwipeGesture
                     SwipeDirection = $"You swiped: right..... i = " + i;
                     OnPropertyChanged("SwipeDirection");
                 }
+                OnPropertyChanged("Question");
+                OnPropertyChanged("Good");
+                OnPropertyChanged("Evil");
+                OnPropertyChanged("ImagePath");
             }
             //generate result
             //else
@@ -97,17 +101,5 @@ namespace SwipeGesture
 
             //}
         }
-
-
-        //#region INotifyPropertyChanged
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
-        //#endregion
     }
 }

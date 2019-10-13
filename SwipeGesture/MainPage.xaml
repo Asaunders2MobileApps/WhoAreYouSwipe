@@ -5,29 +5,30 @@
              x:Class="SwipeGesture.MainPage"
              Title="Swipe Gesture Recognizers">
     <StackLayout Margin="20">
-        <!--
+        
             <Label Text="Swipe inside the box with a single finger." />
-            <BoxView Color="Teal" WidthRequest="300" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                <BoxView.GestureRecognizers>
-                    --><!-- Can also set a swipe threshold on each gesture recognizer --><!--
-                    <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}" CommandParameter="Left" />
+           
+        <!--<BoxView Color="Teal" WidthRequest="300" HeightRequest="300" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+            <BoxView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeCommand}" CommandParameter="Left" />
                     <SwipeGestureRecognizer Direction="Right" Command="{Binding SwipeCommand}" CommandParameter="Right" />
                 </BoxView.GestureRecognizers>
-            </BoxView>
+            </BoxView>-->
         
-        <Label x:Name="myLabel" 
+        <Label x:Name="question"
                Text="{Binding Question}" 
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
 
-        <Label x:Name="goodButton"
+        <Label x:Name="goodChoice"
                 Text="{Binding Good}"
-                />
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
 
-        <Label x:Name="evilButton"
+        <Label x:Name="evilChoice"
                 Text="{Binding Evil}"
-               />
-        -->
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand" />
 
         <Image Source="{Binding ImagePath}">
             <Image.GestureRecognizers>

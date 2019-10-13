@@ -78,7 +78,7 @@ namespace SwipeGesture
         void Swipe(string value)
         {
             i += 1;
-            if (i =< 6)
+            if (i <= 6)
             {
                 if (value.Equals("Left"))
                 {

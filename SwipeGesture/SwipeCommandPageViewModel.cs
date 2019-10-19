@@ -8,7 +8,7 @@ namespace SwipeGesture
 {
     public class SwipeCommandPageViewModel : INotifyPropertyChanged
     {
-        String[] Questions = new string[] { "Who is this tool used by?", "Ezio is: ", "Leonardo is: ", "Viere is: ", "Desonmond is: ", "This knight is: ", "What does this logo represent?" };
+        String[] Questions = new string[] {"Who is this tool used by?", "Ezio is: ", "Leonardo is: ", "Viere is: ", "Desonmond is: ", "This knight is: ", "What does this logo represent?" };
         String[] GoodAnswers = new string[] {"Members of the Brotherhood", "The leader of the Brotherhood", "A great inventor and partner", "Our main target", "My ancestor", "A puppet", "The Brotherhood" };
         String[] EvilAnswers = new string[] { "A group of Rebels", "The leader of the Rebels", "A traiter that must be eliminated", "Our leader", "A threat to the Templars", "A protector", "The Rebels" };
         int[] score = {0, 0};
@@ -48,7 +48,7 @@ namespace SwipeGesture
             set
             {
                 OnPropertyChanged("GoodAnswers");
-                score[1] += 1;
+                score[0] += 1;
             }
             get
             {
@@ -61,7 +61,7 @@ namespace SwipeGesture
             set
             {
                 OnPropertyChanged("EvilAnswers");
-                score[0] += 1;
+                score[1] += 1;
             }
             get
             {
@@ -98,7 +98,7 @@ namespace SwipeGesture
             set {
                 if (score[0] > score[1])
                 {
-                    if (score[0] < 3)
+                    if (score[0] < 5)
                     {
                         character = "You are Ezio the main assassin and ancestor to desmond. You lead a large group of assassins in your conquest to bring justice to Italy and restore the Assassin's Order. You biggest nemisis is Vivere de Pazzi";
                         x = 1;
@@ -111,7 +111,7 @@ namespace SwipeGesture
                 }
                 else
                 {
-                    if (score[1] < 3)
+                    if (score[1] < 5)
                     {
                         character = "You are Leonardo Da Vinci, you are a gifted inventor and helped Ezio create many of the tools he used to restore order.";
                         x = 2;
